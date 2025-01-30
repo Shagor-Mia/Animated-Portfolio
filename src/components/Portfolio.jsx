@@ -1,64 +1,69 @@
-import project1 from "../assets/project1.png";
-import project2 from "../assets/project2.png";
-import project4 from "../assets/project4.png";
-import project5 from "../assets/project5.png";
+import doctors from "../assets/doctors.png";
+import chatapp from "../assets/chatApp.png";
+import ecommerce from "../assets/ecommerce.png";
+import myportfolio from "../assets/myportfolio.png";
 import project6 from "../assets/project6.png";
 import { AiOutlineGithub } from "react-icons/ai";
 import Reveal from "./Reveal";
 
 const projects = [
   {
-    img: project1,
-    title: "Project #1",
-    description: "UI for frontend development using React.",
-    links: {
-      site: "#",
-      github: "https://github.com/Shagor-Mia",
-    },
-  },
-  {
-    img: project2,
-    title: "Project #2",
-    description: "A fullstack application built with Node.js and MongoDB.",
-    links: {
-      site: "#",
-      github: "#",
-    },
-  },
-  {
-    img: project4,
-    title: "Project #3",
-    description: "An e-commerce platform with various features.",
-    links: {
-      site: "#",
-      github: "#",
-    },
-  },
-  {
-    img: project5,
-    title: "Project #4",
-    description: "A mobile-friendly application using React Native.",
-    links: {
-      site: "#",
-      github: "#",
-    },
-  },
-  {
-    img: project6,
-    title: "Project #5",
+    img: doctors,
+    title: "Doctors AppionmentApp",
     description:
-      "A data visualization project using D3.js and other libraries.",
+      "Doctor Appointment App using MERN Stack. Where Admin dashboard for management and front view for patients.Where patient can get appointment ,send message ,find list of doctors etc. All patients activity or  doctors activity can be managed in the admin panel.",
     links: {
-      site: "#",
-      github: "#",
+      site: "",
+      github:
+        "https://github.com/Shagor-Mia/Doctor-s-appointment-in-a-hospital-web-application",
     },
   },
+  {
+    img: chatapp,
+    title: "MERN chatApp",
+    description:
+      "A fullstack  chat application built with React js,Tailwind CSS,Node.js and Express js, Socket.io and MongoDB atlas. Where multiple peaple can communicate each other in real time. Anyone can see who is online or offline",
+    links: {
+      site: "",
+      github: "https://github.com/Shagor-Mia/ChatApp",
+    },
+  },
+  {
+    img: ecommerce,
+    title: "MERN E-commerce",
+    description:
+      "A responsive e-commerce platform with various features. Where frontend is build with React js, Redux-toolkit, ailwind CSS, shadcn UI and backend is build with Node js, Express js, MongoDB Atlas and SSLCommerz Payment gateway. Where frontview for customer and dashboard for admin.",
+    links: {
+      site: "",
+      github: "https://github.com/Shagor-Mia/E-Commerce",
+    },
+  },
+  {
+    img: myportfolio,
+    title: "Dynamic Portfolio",
+    description:
+      "A dynamic portfolio using React js, Redux-toolkit,Tailwind CSS,shadcn UI, Node js, Express js, MongoDB. It Has portfolio part for everyone and dashboard for me, where i can manage my portfolio dynamically.",
+    links: {
+      site: "",
+      github: "https://github.com/Shagor-Mia/Portfolio",
+    },
+  },
+  // {
+  //   img: project6,
+  //   title: "Project #5",
+  //   description:
+  //     "A data visualization project using D3.js and other libraries.",
+  //   links: {
+  //     site: "#",
+  //     github: "#",
+  //   },
+  // },
 ];
 
 const Portfolio = () => {
   return (
     <div className="max-w-[1000px] mx-auto p-6 md:my-20" id="portfolio">
-      <h2 className="text-3xl font-bold text-gray-200 mb-8">Portfolio</h2>
+      <h2 className="text-4xl font-bold text-gray-200 mb-8">Projects</h2>
       {projects.map((project, index) => (
         <Reveal key={index}>
           <div
@@ -80,14 +85,21 @@ const Portfolio = () => {
               </h3>
               <p className="text-gray-300 mb-4">{project.description}</p>
               <div className="flex space-x-4">
-                <a
-                  href={project.links.site}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 bg-slate-600 text-gray-200 rounded-lg hover:bg-slate-700 transition duration-300"
-                >
-                  View Site
-                </a>
+                {project.links.site ? (
+                  <a
+                    href={project.links.site}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 bg-slate-600 text-gray-200 rounded-lg hover:bg-slate-700 transition duration-300"
+                  >
+                    View Site
+                  </a>
+                ) : (
+                  <span className="px-4 py-2 bg-gray-500 text-gray-300 rounded-lg cursor-not-allowed">
+                    Not Deployed
+                  </span>
+                )}
+
                 <a
                   href={project.links.github}
                   target="_blank"

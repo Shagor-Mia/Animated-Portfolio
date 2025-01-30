@@ -13,6 +13,7 @@ import { SiTailwindcss, SiExpress } from "react-icons/si";
 import { FaPalette } from "react-icons/fa";
 import Reveal from "./Reveal";
 import { Link } from "react-scroll";
+import { TbBrandRedux } from "react-icons/tb";
 
 const skills = [
   {
@@ -20,7 +21,7 @@ const skills = [
     technologies: [
       { name: "HTML", icon: <DiHtml5 className="text-orange-600" /> },
       { name: "CSS", icon: <DiCss3 className="text-blue-600" /> },
-      { name: "Sass", icon: <DiSass className="text-pink-600" /> },
+      // { name: "Sass", icon: <DiSass className="text-pink-600" /> },
       { name: "Bootstrap", icon: <DiBootstrap className="text-purple-600" /> },
       { name: "Tailwind", icon: <SiTailwindcss className="text-teal-400" /> },
       { name: "Shadcn", icon: <FaPalette className="text-purple-500" /> },
@@ -29,6 +30,10 @@ const skills = [
         icon: <DiJavascript1 className="text-yellow-500" />,
       },
       { name: "React", icon: <DiReact className="text-blue-500" /> },
+      {
+        name: "Redux",
+        icon: <TbBrandRedux className="text-purple-600" />,
+      },
     ],
   },
   {

@@ -1,12 +1,17 @@
 import { DiPython } from "react-icons/di";
 import { SiCplusplus, SiMysql } from "react-icons/si"; // Keep these as is
 import { FaCogs, FaDatabase } from "react-icons/fa"; // Use FaCogs for C#
+import { SiMongodb, SiSublimetext, SiAdobe } from "react-icons/si"; // VS Code, Sublime, MongoDB, Adobe
+import { VscVscodeInsiders } from "react-icons/vsc";
+import { VscVscode } from "react-icons/vsc";
+import { FaGitSquare } from "react-icons/fa";
+import { SiCodeblocks } from "react-icons/si";
 
 import Reveal from "./Reveal";
 
 const programmingSkills = [
   {
-    category: "Programming Languages",
+    category: "Programming",
     technologies: [
       { name: "Python", icon: <DiPython className="text-blue-500" /> },
       { name: "C", icon: <SiCplusplus className="text-green-500" /> },
@@ -17,8 +22,38 @@ const programmingSkills = [
   {
     category: "Databases",
     technologies: [
+      { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
       { name: "SQL", icon: <FaDatabase className="text-gray-500" /> },
       { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
+    ],
+  },
+  {
+    category: "Apps",
+    technologies: [
+      {
+        name: "code",
+        icon: <VscVscodeInsiders className="text-blue-500" />,
+      },
+      {
+        name: "git",
+        icon: <FaGitSquare className="text-white" />,
+      },
+      {
+        name: "studio",
+        icon: <VscVscode className="text-purple-500" />,
+      },
+      {
+        name: "Sublime",
+        icon: <SiSublimetext className="text-yellow-800" />,
+      },
+      // {
+      //   name: "Pre",
+      //   icon: <SiAdobe className="text-purple-800" />,
+      // },
+      // {
+      //   name: "CodeBlock",
+      //   icon: <SiCodeblocks className="text-white" />,
+      // },
     ],
   },
 ];
@@ -26,7 +61,7 @@ const programmingSkills = [
 const ProgrammingSkills = () => {
   return (
     <div
-      className="max-w-[650px] mx-auto flex flex-col justify-center px-4 text-gray-200 pb-8 md:py-12"
+      className="max-w-[850px] mx-auto flex flex-col justify-center px-4 text-gray-200 pb-8 md:py-12"
       id="programming-skills"
     >
       <Reveal>

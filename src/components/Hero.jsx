@@ -4,6 +4,8 @@ import profilepic2 from "../assets/sg2.png"; // Ensure this is a different image
 import { TypeAnimation } from "react-type-animation";
 import ShinyEffect from "./ShinyEffect";
 import sagor from "../assets/sagor.pdf";
+import resume from "../assets/resume.pdf";
+
 import {
   AiOutlineGithub,
   AiOutlineInstagram,
@@ -75,19 +77,34 @@ const Hero = () => {
             transition={{ duration: 1, delay: 1.5 }}
             className="flex flex-row items-center gap-6 my-4 md:mb-0"
           >
-            <motion.button
+            <motion.a
               whileHover={{
                 scale: 1.05,
                 boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)",
               }}
               className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border
-                          border-purple-400 rounded-xl"
-              onClick={() => {
-                window.open(sagor, "_blank"); // Opens CV in a new tab
+             border-purple-400 rounded-xl"
+              href={resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              type="application/pdf"
+            >
+              Resume
+            </motion.a>
+            <motion.a
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)",
               }}
+              className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border
+             border-purple-400 rounded-xl"
+              href={sagor}
+              target="_blank"
+              rel="noopener noreferrer"
+              type="application/pdf"
             >
               View CV
-            </motion.button>
+            </motion.a>
 
             <div className="flex gap-6 flex-row text-4xl md:text-6xl text-purple-400 z-20">
               <motion.a
@@ -120,15 +137,17 @@ const Hero = () => {
           </motion.div>
         </motion.div>
 
-        <motion.img
-          key={currentPhotoIndex} // Ensure React applies animation to changing images
-          src={photos[currentPhotoIndex]}
-          className="w-[300px] md:w-[300px] rounded-full shadow-lg "
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-        />
+        <motion.div className="w-[300px] md:w-[300px] h-[300px] md:h-[300px] rounded-full overflow-hidden relative">
+          <motion.img
+            key={currentPhotoIndex}
+            src={photos[currentPhotoIndex]}
+            className="w-full h-full object-cover"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          />
+        </motion.div>
       </div>
 
       <motion.div
