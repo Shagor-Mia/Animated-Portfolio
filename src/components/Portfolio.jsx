@@ -13,7 +13,7 @@ const projects = [
     description:
       "Doctor Appointment App using MERN Stack. Where Admin dashboard for management and front view for patients.Where patient can get appointment ,send message ,find list of doctors etc. All patients activity or  doctors activity can be managed in the admin panel.",
     links: {
-      site: "",
+      site: "https://doctor-appiontment.netlify.app/",
       github:
         "https://github.com/Shagor-Mia/Doctor-s-appointment-in-a-hospital-web-application",
     },
