@@ -9,7 +9,6 @@ import resume from "../assets/resume.pdf";
 import {
   AiOutlineGithub,
   AiOutlineInstagram,
-  AiOutlineLink,
   AiOutlineLinkedin,
 } from "react-icons/ai";
 import {

@@ -2,7 +2,7 @@ import doctors from "../assets/doctors.png";
 import chatapp from "../assets/chatApp.png";
 import ecommerce from "../assets/ecommerce.png";
 import myportfolio from "../assets/myportfolio.png";
-import project6 from "../assets/project6.png";
+
 import { AiOutlineGithub } from "react-icons/ai";
 import Reveal from "./Reveal";
 
