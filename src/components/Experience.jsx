@@ -57,9 +57,10 @@ const Experience = () => {
           className=" border border-purple-600 p-6 rounded-lg shadow-md
                     hover:shadow-xl transition-shadow duration-300 bg-purple-700/10"
         >
-          <h2 className="text-gray-100 text-2xl font-semibold">
-            looking for gain hands on experience.
-          </h2>
+          <p className="text-white">
+            MERN stack remote internship(17.02.2025 to 25.03.2025) at Fathsoft
+            agency(bangladesh).
+          </p>
         </motion.div>
       </motion.div>
     </div>
