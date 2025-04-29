@@ -1,6 +1,4 @@
-import React from "react";
 import { motion } from "framer-motion";
-import Reveal from "./Reveal";
 
 const experiences = [
   {
@@ -58,8 +56,8 @@ const Experience = () => {
                     hover:shadow-xl transition-shadow duration-300 bg-purple-700/10"
         >
           <p className="text-white">
-            MERN stack remote internship(17.02.2025 to 25.03.2025) at Fathsoft
-            agency(bangladesh).
+            MERN(backend focused) stack remote (10.02.2025 to 03.04.2025) at
+            Fathsoft agency(bangladesh).
           </p>
         </motion.div>
       </motion.div>
