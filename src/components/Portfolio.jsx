@@ -1,4 +1,5 @@
 import doctors from "../assets/doctors.png";
+import school from "../assets/school.png";
 import chatapp from "../assets/chatApp.png";
 import ecommerce from "../assets/ecommerce.png";
 import myportfolio from "../assets/myportfolio.png";
@@ -7,6 +8,16 @@ import { AiOutlineGithub } from "react-icons/ai";
 import Reveal from "./Reveal";
 
 const projects = [
+  {
+    img: school,
+    title: "Next Js School Management Dashboard",
+    description:
+      "How to manage a school smartly are designed in this project. Where Admin,Teacher, Student has different role for entering. Where has menu item such as teacher, students, parents ,events, exam etc you will be found.Next js,Typescript, React js, react-form-hook, zod validation etc are being used in this UI design ",
+    links: {
+      site: "https://school-management-dasboard-ui.netlify.app/",
+      github: "https://github.com/Shagor-Mia/school_management_dashboard_UI",
+    },
+  },
   {
     img: doctors,
     title: "Doctors AppionmentApp",
