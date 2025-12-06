@@ -1,19 +1,24 @@
 import {
   DiHtml5,
   DiCss3,
-  DiSass,
-  DiBootstrap,
   DiJavascript1,
   DiReact,
   DiNodejsSmall,
   DiMongodb,
-  DiGithubBadge,
 } from "react-icons/di";
-import { SiTailwindcss, SiExpress } from "react-icons/si";
-import { FaPalette } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiExpress,
+  SiNestjs,
+  SiTypescript,
+  SiMysql,
+  SiNextdotjs,
+} from "react-icons/si";
 import Reveal from "./Reveal";
 import { Link } from "react-scroll";
-import { TbBrandRedux } from "react-icons/tb";
+// import { TbBrandRedux } from "react-icons/tb";
+import { RiFirebaseFill } from "react-icons/ri";
+import { FaDocker } from "react-icons/fa6";
 
 const skills = [
   {
@@ -21,29 +26,42 @@ const skills = [
     technologies: [
       { name: "HTML", icon: <DiHtml5 className="text-orange-600" /> },
       { name: "CSS", icon: <DiCss3 className="text-blue-600" /> },
-      // { name: "Sass", icon: <DiSass className="text-pink-600" /> },
-      { name: "Bootstrap", icon: <DiBootstrap className="text-purple-600" /> },
+
       { name: "Tailwind", icon: <SiTailwindcss className="text-teal-400" /> },
-      { name: "Shadcn", icon: <FaPalette className="text-purple-500" /> },
+
       {
         name: "JavaScript",
         icon: <DiJavascript1 className="text-yellow-500" />,
       },
+      {
+        name: "TypeScript",
+        icon: <SiTypescript className="text-blue-500" />,
+      },
+      {
+        name: "Firebase",
+        icon: <RiFirebaseFill className="text-yellow-500" />,
+      },
       { name: "React", icon: <DiReact className="text-blue-500" /> },
       {
-        name: "Redux",
-        icon: <TbBrandRedux className="text-purple-600" />,
+        name: "Next js",
+        icon: <SiNextdotjs className="text-white" />,
       },
     ],
   },
   {
-    category: "Fullstack",
+    category: "Backend",
     technologies: [
       { name: "Node Js", icon: <DiNodejsSmall className="text-green-500" /> },
       { name: "Express", icon: <SiExpress className="text-gray-300" /> },
+      { name: "Nest js", icon: <SiNestjs className="text-red-500" /> },
+      {
+        name: "JavaScript",
+        icon: <DiJavascript1 className="text-yellow-500" />,
+      },
+      { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
       { name: "MongoDB", icon: <DiMongodb className="text-green-600" /> },
-      { name: "React", icon: <DiReact className="text-blue-500" /> },
-      { name: "GitHub", icon: <DiGithubBadge className="text-gray-600" /> },
+      { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
+      { name: "Docker", icon: <FaDocker className="text-blue-600" /> },
     ],
   },
 ];

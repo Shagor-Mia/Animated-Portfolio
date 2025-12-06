@@ -1,11 +1,10 @@
-import { DiPython } from "react-icons/di";
+import { DiGithubBadge, DiPython } from "react-icons/di";
 import { SiCplusplus, SiMysql } from "react-icons/si"; // Keep these as is
 import { FaCogs, FaDatabase } from "react-icons/fa"; // Use FaCogs for C#
-import { SiMongodb, SiSublimetext, SiAdobe } from "react-icons/si"; // VS Code, Sublime, MongoDB, Adobe
+import { SiMongodb, SiSublimetext } from "react-icons/si"; // VS Code, Sublime, MongoDB, Adobe
 import { VscVscodeInsiders } from "react-icons/vsc";
-import { VscVscode } from "react-icons/vsc";
+// import { VscVscode } from "react-icons/vsc";
 import { FaGitSquare } from "react-icons/fa";
-import { SiCodeblocks } from "react-icons/si";
 
 import Reveal from "./Reveal";
 
@@ -38,22 +37,11 @@ const programmingSkills = [
         name: "git",
         icon: <FaGitSquare className="text-white" />,
       },
-      {
-        name: "studio",
-        icon: <VscVscode className="text-purple-500" />,
-      },
+      { name: "GitHub", icon: <DiGithubBadge className="text-gray-600" /> },
       {
         name: "Sublime",
         icon: <SiSublimetext className="text-yellow-800" />,
       },
-      // {
-      //   name: "Pre",
-      //   icon: <SiAdobe className="text-purple-800" />,
-      // },
-      // {
-      //   name: "CodeBlock",
-      //   icon: <SiCodeblocks className="text-white" />,
-      // },
     ],
   },
 ];
