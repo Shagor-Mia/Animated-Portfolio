@@ -13,11 +13,13 @@ import {
   SiTypescript,
   SiMysql,
   SiNextdotjs,
+  SiRender,
+  SiNetlify,
 } from "react-icons/si";
 import Reveal from "./Reveal";
 import { Link } from "react-scroll";
 // import { TbBrandRedux } from "react-icons/tb";
-import { RiFirebaseFill } from "react-icons/ri";
+import { RiFirebaseFill, RiVercelLine } from "react-icons/ri";
 import { FaDocker } from "react-icons/fa6";
 
 const skills = [
@@ -46,6 +48,14 @@ const skills = [
         name: "Next js",
         icon: <SiNextdotjs className="text-white" />,
       },
+      {
+        name: "Netlify",
+        icon: <SiNetlify className="text-blue-500" />,
+      },
+      {
+        name: "vercel",
+        icon: <RiVercelLine className="text-white" />,
+      },
     ],
   },
   {
@@ -62,6 +72,8 @@ const skills = [
       { name: "MongoDB", icon: <DiMongodb className="text-green-600" /> },
       { name: "MySQL", icon: <SiMysql className="text-blue-600" /> },
       { name: "Docker", icon: <FaDocker className="text-blue-600" /> },
+      { name: "vercel", icon: <RiVercelLine className="text-white" /> },
+      { name: "render", icon: <SiRender className="text-white" /> },
     ],
   },
 ];
