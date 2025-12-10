@@ -16,7 +16,7 @@ const projects = [
     img: zapshift,
     title: "ZapShift-A pickup courier Service- (MERN fullstack)",
     description:
-      "A courier service project With MERN stack. here you can pass your delivery from your to your destination. admin , rider ,user are separate usecase. for payment integration we use Stripe payment. here uses react,firebase,node js, express js, mongodb atlas, stripe payment gateway. hosting in firebase and vercel",
+      "A courier service project With MERN stack. here you can pass your delivery from your to your destination. admin , rider ,user are separate usecase. for payment integration we use Stripe payment. here uses react, swiper.js, react Map(react leaflet), firebase, node js, express js, mongodb atlas, stripe payment gateway. hosting in firebase and vercel(backend). ##credentials for admin:sami1@gmail.com,rider:samim@gmail.com, user:alamin@gmail.com, Password forall:Aa@123",
     links: {
       site: "https://final-project-zipshift-curier.web.app/",
       github: "https://github.com/Shagor-Mia/11ZapShift-Courier-service",
