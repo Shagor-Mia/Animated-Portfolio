@@ -7,11 +7,22 @@ import app from "../assets/app.png";
 import homehero from "../assets/homehero.png";
 import pet from "../assets/pet.png";
 import zapshift from "../assets/zapshift.png";
+import ticket from "../assets/ticket.png";
 
 import { AiOutlineGithub } from "react-icons/ai";
 import Reveal from "./Reveal";
 
 const projects = [
+  {
+    img: ticket,
+    title: "TicketTime - Online Ticket Booking Platform (MERN stack)",
+    description:
+      "An online ticket booking project With MERN stack. here you can book your online(bus,train,plane etc) ticket to your desire destination. admin , vendor ,user are separate usecase. for payment integration we use Stripe payment. here uses react, swiper.js, framer motion,firebase authentication, react Map(react leaflet), firebase, JWT, node js, express js, mongodb atlas, stripe payment gateway. hosting in firebase(frontend) and vercel(backend). ##credentials for admin:safwanjarir07@gmail.com,vendor:sagor4@gmail.com, user:safwanjarir07@gmail.com, Password for all:Aa@123",
+    links: {
+      site: "https://ticket-time-dcb40.web.app/",
+      github: "https://github.com/Shagor-Mia/TicketTime-client",
+    },
+  },
   {
     img: zapshift,
     title: "ZapShift-A pickup courier Service- (MERN fullstack)",
