@@ -2,6 +2,7 @@ import { FaGithubSquare, FaInstagram } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
 import { FaDiscord } from "react-icons/fa";
+import SM from "../assets/SM.jpg";
 
 const Footer = () => {
   return (
@@ -40,7 +41,7 @@ const Footer = () => {
         {" "}
         <span>
           <a href="#" className="text-xl hidden md:block sm:text-2xl font-bold">
-            <img src="/public/SM.jpg" className=" w-10 rounded-full" alt="" />
+            <img src={SM} className=" w-10 rounded-full" alt="" />
           </a>
         </span>
         @2025 All rights shagor.

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-scroll";
 import { motion, AnimatePresence } from "framer-motion";
+import SM from "../assets/SM.jpg";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
@@ -13,7 +14,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 sm:h-20 text-gray-200">
           {/* LOGO */}
           <a href="#" className="text-xl sm:text-2xl font-bold">
-            <img src="/public/SM.jpg" className=" w-10 rounded-full" alt="" />
+            <img src={SM} className=" w-10 rounded-full" alt="" />
           </a>
 
           {/* DESKTOP MENU */}
