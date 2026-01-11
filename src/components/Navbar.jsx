@@ -13,7 +13,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 sm:h-20 text-gray-200">
           {/* LOGO */}
           <a href="#" className="text-xl sm:text-2xl font-bold">
-            Shagor
+            <img src="/public/SM.jpg" className=" w-10 rounded-full" alt="" />
           </a>
 
           {/* DESKTOP MENU */}

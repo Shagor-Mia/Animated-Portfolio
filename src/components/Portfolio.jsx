@@ -12,9 +12,9 @@ import Reveal from "./Reveal";
 const projects = [
   {
     img: ticket,
-    title: "TicketTime – Online Ticket Booking Platform (MERN)",
+    title: "TicketTime - Online Ticket Booking Platform (MERN stack)",
     description:
-      "Online ticket booking system (bus, train, plane). Role-based access (admin, vendor, user), Stripe payments, maps, authentication, JWT, MongoDB, Firebase & Vercel.",
+      "An online ticket booking project With MERN stack. here you can book your online(bus,train,plane etc) ticket to your desire destination. admin , vendor ,user are separate usecase. for payment integration we use Stripe payment. here uses react, swiper.js, framer motion,firebase authentication, react Map(react leaflet), firebase, JWT, node js, express js, mongodb atlas, stripe payment gateway. hosting in firebase(frontend) and vercel(backend). ##credentials for admin:safwanjarir07@gmail.com,vendor:sagor4@gmail.com, user:safwanjarir07@gmail.com, Password for all:Aa@123",
     links: {
       site: "https://ticket-time-dcb40.web.app/",
       github: "https://github.com/Shagor-Mia/TicketTime-client",
@@ -22,9 +22,9 @@ const projects = [
   },
   {
     img: zapshift,
-    title: "ZapShift – Pickup Courier Service (MERN)",
+    title: "ZapShift-A pickup courier Service- (MERN fullstack)",
     description:
-      "Courier service platform with admin, rider & user roles. Stripe payments, maps, Firebase auth, Node.js backend & MongoDB.",
+      "A courier service project With MERN stack. here you can pass your delivery from your to your destination. admin , rider ,user are separate usecase. for payment integration we use Stripe payment. here uses react, swiper.js, react Map(react leaflet), firebase, node js, express js, mongodb atlas, stripe payment gateway. hosting in firebase and vercel(backend). ##credentials for admin:sami1@gmail.com,rider:samim@gmail.com, user:alamin@gmail.com, Password forall:Aa@123",
     links: {
       site: "https://final-project-zipshift-curier.web.app/",
       github: "https://github.com/Shagor-Mia/11ZapShift-Courier-service",
@@ -32,9 +32,9 @@ const projects = [
   },
   {
     img: homehero,
-    title: "Home Hero – Local Service Finder",
+    title: "Home Hero-A local service finder - (MERN fullstack)",
     description:
-      "Daily home services platform (electrician, plumber, renovation). Built with React, Firebase, JWT & DaisyUI.",
+      "react,firebase athentication ,JWT, daisyUI etc. the project is about daily home service. such as electrical , plumber, decoration, home-renovation etc",
     links: {
       site: "https://hero-home-service10.web.app/",
       github: "https://github.com/Shagor-Mia/client-side-home-service10",
@@ -42,9 +42,9 @@ const projects = [
   },
   {
     img: pet,
-    title: "WarmPaws – Pet Care in Winter",
+    title: "WarmPaws – Pet Care in Winter- (Frontend Projects)",
     description:
-      "Pet care website built with React, Firebase authentication, Context API & Framer Motion.",
+      "pet care centre in winter. react,js firebase authentication,framer motion etc used for this project 'WarmPaws – Pet Care in Winter'. here this project done by react js, firebase, JSON contextAPI ",
     links: {
       site: "https://sagor-paw-cares.netlify.app/",
       github: "https://github.com/Shagor-Mia/PetCare-WarmPaws",
@@ -52,9 +52,9 @@ const projects = [
   },
   {
     img: app,
-    title: "Quick Store – App Gallery",
+    title: "Quick Store-An App Gallery - (Frontend Projects)",
     description:
-      "Prototype of an app store with search, sort, charts & routing using React & DaisyUI.",
+      "it is prototype of app store like play store. React, react router, daisyUI, recharts, loading spinner, search, sort by etc.",
     links: {
       site: "https://quicktoapp.netlify.app/",
       github: "https://github.com/Shagor-Mia/Assignment8",
@@ -62,9 +62,9 @@ const projects = [
   },
   {
     img: school,
-    title: "Next.js School Management Dashboard",
+    title: "Next Js School Management Dashboard- (Frontend Projects)",
     description:
-      "Role-based dashboard for admin, teachers & students. Built with Next.js, TypeScript, React Hook Form & Zod.",
+      "How to manage a school smartly are designed in this project. Where Admin,Teacher, Student has different role for entering. Where has menu item such as teacher, students, parents ,events, exam etc you will be found.Next js,Typescript, React js, react-form-hook, zod validation etc are being used in this UI design ",
     links: {
       site: "https://school-management-dasboard-ui.netlify.app/",
       github: "https://github.com/Shagor-Mia/school_management_dashboard_UI",
@@ -72,9 +72,9 @@ const projects = [
   },
   {
     img: doctors,
-    title: "Doctor Appointment Application (MERN)",
+    title: "Doctors AppionmentApp",
     description:
-      "Doctor appointment system with admin panel, patient booking & doctor management.",
+      "Doctor Appointment App using MERN Stack. Where Admin dashboard for management and front view for patients.Where patient can get appointment ,send message ,find list of doctors etc. All patients activity or doctors activity can be managed in the admin panel.",
     links: {
       site: "https://doctor-appiontment.netlify.app/",
       github:
@@ -85,51 +85,56 @@ const projects = [
 
 const Portfolio = () => {
   return (
-    <section id="portfolio" className="mt-20">
+    <section id="portfolio" className="pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-200 mb-12">
+        {/* SECTION TITLE */}
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-200 mb-14 text-center lg:text-left">
           Projects
         </h2>
 
-        <div className="space-y-20">
+        {/* PROJECT LIST */}
+        <div className="space-y-24">
           {projects.map((project, index) => (
             <Reveal key={index}>
               <div
-                className={`flex flex-col lg:flex-row items-center gap-8 ${
+                className={`flex flex-col gap-10 lg:gap-14 lg:flex-row items-center ${
                   index % 2 !== 0 ? "lg:flex-row-reverse" : ""
                 }`}
               >
                 {/* IMAGE */}
                 <div className="w-full lg:w-1/2">
-                  <img
-                    src={project.img}
-                    alt={project.title}
-                    className="w-full rounded-xl shadow-lg object-cover"
-                  />
+                  <div className="overflow-hidden rounded-2xl shadow-xl">
+                    <img
+                      src={project.img}
+                      alt={project.title}
+                      className="w-full h-[220px] sm:h-[280px] md:h-[340px] lg:h-[360px] object-cover hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
                 </div>
 
                 {/* CONTENT */}
                 <div className="w-full lg:w-1/2">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-200 mb-4">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-200 mb-4">
                     {project.title}
                   </h3>
 
-                  <p className="text-gray-300 text-base sm:text-lg mb-6">
+                  <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed mb-6">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-4">
+                  {/* ACTION BUTTONS */}
+                  <div className="flex flex-wrap items-center gap-4">
                     {project.links.site ? (
                       <a
                         href={project.links.site}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-5 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition"
+                        className="px-6 py-3 rounded-xl bg-purple-600 text-white font-medium hover:bg-purple-700 transition"
                       >
                         View Site
                       </a>
                     ) : (
-                      <span className="px-5 py-2 rounded-lg bg-gray-600 text-gray-300 cursor-not-allowed">
+                      <span className="px-6 py-3 rounded-xl bg-gray-600 text-gray-300 cursor-not-allowed">
                         Not Deployed
                       </span>
                     )}
@@ -138,9 +143,9 @@ const Portfolio = () => {
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center px-5 py-2 rounded-lg bg-gray-700 text-gray-200 hover:bg-gray-800 transition"
+                      className="flex items-center justify-center w-12 h-12 rounded-xl bg-gray-700 text-gray-200 hover:bg-gray-800 transition"
                     >
-                      <AiOutlineGithub size={22} />
+                      <AiOutlineGithub size={24} />
                     </a>
                   </div>
                 </div>

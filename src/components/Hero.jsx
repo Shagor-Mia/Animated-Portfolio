@@ -25,10 +25,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative pt-24 md:pt-40">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* HERO GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1  md:grid-cols-2 gap-12 items-center">
           {/* LEFT CONTENT */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -50,7 +50,7 @@ const Hero = () => {
               className="text-gray-400 font-semibold text-lg sm:text-xl md:text-3xl mb-4"
             />
 
-            <h1 className="text-gray-200 font-bold leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+            <h1 className="text-gray-200 font-bold leading-tight text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-6">
               HEY, I AM <br />
               <span className="text-purple-500">Shagor Mia</span>
             </h1>
@@ -67,16 +67,25 @@ const Hero = () => {
                 { label: "Resume", file: resume },
                 { label: "View CV", file: sagor },
               ].map((item) => (
-                <motion.a
+                <motion.button
                   key={item.label}
                   whileHover={{ scale: 1.05 }}
-                  href={item.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  onClick={() => {
+                    // Open in a new tab
+                    window.open(item.file, "_blank");
+
+                    // Trigger download
+                    const link = document.createElement("a");
+                    link.href = item.file;
+                    link.download = item.file.split("/").pop(); // gets filename
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
                   className="text-center font-semibold text-gray-200 px-6 py-3 border border-purple-400 rounded-xl hover:bg-purple-400/10 transition"
                 >
                   {item.label}
-                </motion.a>
+                </motion.button>
               ))}
             </div>
 

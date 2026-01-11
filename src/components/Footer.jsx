@@ -36,7 +36,15 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="text-gray-400">@2025 All rights shagor.</p>
+      <p className="text-gray-400 flex gap-5 items-center justify-center">
+        {" "}
+        <span>
+          <a href="#" className="text-xl hidden md:block sm:text-2xl font-bold">
+            <img src="/public/SM.jpg" className=" w-10 rounded-full" alt="" />
+          </a>
+        </span>
+        @2025 All rights shagor.
+      </p>
     </div>
   );
 };
