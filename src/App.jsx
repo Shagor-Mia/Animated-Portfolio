@@ -9,7 +9,7 @@ import Skills from "./components/Skills";
 
 export default function App() {
   return (
-    <>
+    <div className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <Skills />
@@ -18,6 +18,6 @@ export default function App() {
       <Experience />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }

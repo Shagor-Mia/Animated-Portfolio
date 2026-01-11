@@ -1,110 +1,69 @@
 import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [nav, setNav] = useState(false);
 
-  const toggleNav = () => {
-    setNav(!nav);
-  };
-
-  const closeNav = () => {
-    setNav(false);
-  };
-
-  const menuVariants = {
-    open: {
-      x: 0,
-      transition: {
-        stiffness: 20,
-        damping: 15,
-      },
-    },
-    closed: {
-      x: "-100%",
-      transition: {
-        stiffness: 20,
-        damping: 15,
-      },
-    },
-  };
-
   return (
-    <div className="fixed top-0 left-0 w-full bg-opacity-70 backdrop-blur-md z-50">
-      <div
-        className="max-w-[1300px] mx-auto  flex justify-between text-gray-200
-        text-xl items-center px-12 h-20"
-      >
-        <a href="#">Shagor</a>
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/60 backdrop-blur-md">
+      {/* CONTAINER */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 sm:h-20 text-gray-200">
+          {/* LOGO */}
+          <a href="#" className="text-xl sm:text-2xl font-bold">
+            Shagor
+          </a>
 
-        <ul className="hidden md:flex gap-12 z-10 cursor-pointer">
-          <li>
-            <Link to="skills" smooth={true} offset={50} duration={500}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="portfolio" smooth={true} offset={50} duration={500}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link to="contact" smooth={true} offset={50} duration={500}>
-              Contact
-            </Link>
-          </li>
-        </ul>
-
-        <div onClick={toggleNav} className="md:hidden z-50 text-gray-200">
-          {nav ? <AiOutlineClose size={30} /> : <AiOutlineMenu size={30} />}
-        </div>
-
-        <motion.div
-          initial={false}
-          animate={nav ? "open" : "closed"}
-          variants={menuVariants}
-          className="fixed left-0 top-0 w-full min-h-screen bg-gray-900 z-40"
-        >
-          <ul className="font-semibold text-4xl space-y-8 mt-24 text-center">
-            <li>
-              <Link
-                to="skills"
-                onClick={closeNav}
-                smooth={true}
-                offset={50}
-                duration={500}
+          {/* DESKTOP MENU */}
+          <ul className="hidden md:flex items-center gap-8 lg:gap-12 text-lg">
+            {["skills", "portfolio", "contact"].map((item) => (
+              <li
+                key={item}
+                className="cursor-pointer hover:text-purple-400 transition"
               >
-                About
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="portfolio"
-                onClick={closeNav}
-                smooth={true}
-                offset={50}
-                duration={500}
-              >
-                Portfolio
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="contact"
-                onClick={closeNav}
-                smooth={true}
-                offset={50}
-                duration={500}
-              >
-                Contact
-              </Link>
-            </li>
+                <Link to={item} smooth offset={-80} duration={500}>
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </Link>
+              </li>
+            ))}
           </ul>
-        </motion.div>
+
+          {/* MOBILE TOGGLE */}
+          <button
+            onClick={() => setNav(!nav)}
+            className="md:hidden z-50 text-gray-200"
+            aria-label="Toggle Menu"
+          >
+            {nav ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
+          </button>
+        </div>
       </div>
-    </div>
+
+      {/* MOBILE DROPDOWN */}
+      <AnimatePresence>
+        {nav && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden bg-[#190b1f] border-t border-purple-600/30"
+          >
+            <ul className="flex flex-col items-center gap-6 py-6 text-lg font-medium text-gray-100">
+              {["skills", "portfolio", "contact"].map((item) => (
+                <li key={item} onClick={() => setNav(false)}>
+                  <Link to={item} smooth offset={-80} duration={500}>
+                    {item.charAt(0).toUpperCase() + item.slice(1)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
 

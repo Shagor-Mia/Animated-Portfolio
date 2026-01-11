@@ -1,11 +1,12 @@
 import React from "react";
 import {
-  AiFillLinkedin,
-  AiFillGithub,
+  // AiFillLinkedin,
+  // AiFillGithub,
   AiOutlineLinkedin,
 } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
+import { FaDiscord } from "react-icons/fa";
 
 const Contact = () => {
   return (
@@ -38,29 +39,10 @@ const Contact = () => {
                   <span>Personal Projects</span>
                 </p>
               </div>
-
-              {/* <div className="bg-gray-800/40 p-5 rounded-lg">
-                <h3 className="md:text-4xl text-2xl font-semibold text-white">
-                  5<span>+</span>
-                </h3>
-                <p className="text-xs md:text-base">
-                  <span>years of experience</span>
-                </p>
-              </div>
-
-              <div className="bg-gray-800/40 p-5 rounded-lg">
-                <h3 className="md:text-4xl text-2xl font-semibold text-white">
-                  30
-                  <span>+</span>
-                </h3>
-                <p className="text-xs md:text-base">
-                  <span>happy clients</span>
-                </p>
-              </div> */}
             </div>
           </div>
 
-          <form
+          <div
             action="https://getform.io/f/placeYourEndpointHere"
             method="POST"
             className=" max-w-6xl p-5 md:p-12 text-4xl md:text-6xl text-purple-400 z-20"
@@ -69,43 +51,26 @@ const Contact = () => {
             <p className="text-gray-100 font-bold text-xl mb-2">
               Let´s connect!
             </p>
-            {/* <input
-              type="text"
-              id="name"
-              placeholder="Your Name ..."
-              name="name"
-              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
-            />
-            <input
-              type="email"
-              id="email"
-              placeholder="Your Email ..."
-              name="email"
-              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
-            />
-            <textarea
-              name="textarea"
-              id="textarea"
-              cols="30"
-              rows="4"
-              placeholder="Your Message ..."
-              className="mb-2 w-full rounded-md border border-purple-600 py-2 pl-2 pr-4"
-            />
-            <button
-              type="submit"
-              className="w-full py-3 rounded-md text-gray-100 font-semibold text-xl bg-primary-color"
-            >
-              Send Message
-            </button> */}
-            <motion.a
-              whileHover={{ scale: 1.2 }}
-              href="https://www.linkedin.com/in/md-shagor-a99232266/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <AiOutlineLinkedin />
-            </motion.a>
-          </form>
+
+            <div className="flex gap-5">
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                href="https://www.linkedin.com/in/md-shagor-a99232266/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiOutlineLinkedin />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.2 }}
+                href="https://discord.com/users/1084476457742512138"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaDiscord />
+              </motion.a>
+            </div>
+          </div>
         </div>
       </Reveal>
     </div>

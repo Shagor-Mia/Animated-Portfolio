@@ -81,7 +81,7 @@ const skills = [
 const Skills = () => {
   return (
     <div
-      className="max-w-[650px] mx-auto flex flex-col justify-center px-4 text-gray-200 pb-8 md:py-12"
+      className="max-w-[650px] mx-auto flex flex-col mt-20  justify-center px-4 text-gray-200 pb-8 md:py-12"
       id="skills"
     >
       <Reveal>

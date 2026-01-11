@@ -1,23 +1,15 @@
 import { useState, useEffect } from "react";
 import profilepic1 from "../assets/sg1.png";
-import profilepic2 from "../assets/sg2.png"; // Ensure this is a different image
+import profilepic2 from "../assets/sg2.png";
 import { TypeAnimation } from "react-type-animation";
 import ShinyEffect from "./ShinyEffect";
 import sagor from "../assets/sagor.pdf";
 import resume from "../assets/resume.pdf";
 
-import {
-  AiOutlineGithub,
-  AiOutlineInstagram,
-  AiOutlineLinkedin,
-} from "react-icons/ai";
-import {
-  DiCss3,
-  DiHtml5,
-  DiJavascript1,
-  DiNodejsSmall,
-  DiReact,
-} from "react-icons/di";
+import { AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
+import { DiJavascript1, DiNodejsSmall, DiReact } from "react-icons/di";
+import { SiTypescript, SiNextdotjs } from "react-icons/si";
+import { FaDiscord } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const photos = [profilepic1, profilepic2];
@@ -27,147 +19,131 @@ const Hero = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentPhotoIndex((prevIndex) => (prevIndex + 1) % photos.length);
-    }, 2000); // Change photo every 2 seconds
-    return () => clearInterval(interval); // Cleanup interval on unmount
+      setCurrentPhotoIndex((prev) => (prev + 1) % photos.length);
+    }, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="mt-24 max-w-[1200px] mx-auto relative">
-      <div className="grid md:grid-cols-2 place-items-center gap-8">
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 1 }}
-        >
-          <TypeAnimation
-            sequence={["Fullstack Dev", 1000, "MERN Stack", 1000]}
-            speed={50}
-            repeat={Infinity}
-            className="font-bold text-gray-400 text-xl md:text-5xl italic- mb-4"
-          />
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 0.5 }}
-            className="text-gray-200 md:text-7xl text-5xl tracking-tight mb-4"
-          >
-            HEY, I AM <br />
-            <span className="text-purple-500">Shagor Mia</span>
-          </motion.p>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1, delay: 1 }}
-            className="text-gray-300 max-w-[300px] md:max-w-[500px] md:text-2xl text-lg mb-6"
-          >
-            I am a passionate fullstack[MERN] developer.
-          </motion.p>
-
+    <section className="relative mt-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* HERO GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          {/* LEFT CONTENT */}
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 1, delay: 1.5 }}
-            className="flex flex-row items-center gap-6 my-4 md:mb-0"
+            transition={{ duration: 1 }}
           >
-            <motion.a
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)",
-              }}
-              className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border
-             border-purple-400 rounded-xl"
-              href={resume}
-              target="_blank"
-              rel="noopener noreferrer"
-              type="application/pdf"
-            >
-              Resume
-            </motion.a>
-            <motion.a
-              whileHover={{
-                scale: 1.05,
-                boxShadow: "0px 0px 8px rgba(0, 0, 0, 0.3)",
-              }}
-              className="z-10 cursor-pointer font-bold text-gray-200 md:w-auto p-4 border
-             border-purple-400 rounded-xl"
-              href={sagor}
-              target="_blank"
-              rel="noopener noreferrer"
-              type="application/pdf"
-            >
-              View CV
-            </motion.a>
+            <TypeAnimation
+              sequence={[
+                "Fullstack Developer",
+                1200,
+                "Frontend Developer",
+                1200,
+                "Backend Developer",
+                1200,
+              ]}
+              speed={50}
+              repeat={Infinity}
+              className="text-gray-400 font-semibold text-lg sm:text-xl md:text-3xl mb-4"
+            />
 
-            <div className="flex gap-6 flex-row text-4xl md:text-6xl text-purple-400 z-20">
+            <h1 className="text-gray-200 font-bold leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+              HEY, I AM <br />
+              <span className="text-purple-500">Shagor Mia</span>
+            </h1>
+
+            <p className="text-gray-300 text-base sm:text-lg md:text-xl max-w-xl mb-8">
+              Passionate full-stack developer building scalable web applications
+              using React, Next.js, TypeScript, Node.js, Express, MongoDB &
+              MySQL.
+            </p>
+
+            {/* CTA BUTTONS */}
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 mb-8">
+              {[
+                { label: "Resume", file: resume },
+                { label: "View CV", file: sagor },
+              ].map((item) => (
+                <motion.a
+                  key={item.label}
+                  whileHover={{ scale: 1.05 }}
+                  href={item.file}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center font-semibold text-gray-200 px-6 py-3 border border-purple-400 rounded-xl hover:bg-purple-400/10 transition"
+                >
+                  {item.label}
+                </motion.a>
+              ))}
+            </div>
+
+            {/* SOCIAL ICONS */}
+            <div className="flex gap-6 text-3xl sm:text-4xl md:text-5xl text-purple-400">
               <motion.a
                 whileHover={{ scale: 1.2 }}
                 href="https://github.com/Shagor-Mia"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 <AiOutlineGithub />
               </motion.a>
-
               <motion.a
                 whileHover={{ scale: 1.2 }}
                 href="https://www.linkedin.com/in/md-shagor-a99232266/"
                 target="_blank"
-                rel="noopener noreferrer"
               >
                 <AiOutlineLinkedin />
               </motion.a>
-
               <motion.a
                 whileHover={{ scale: 1.2 }}
-                href="https://www.instagram.com/md.sagor.549668/"
+                href="https://discord.com/users/1084476457742512138"
                 target="_blank"
-                rel="noopener noreferrer"
               >
-                <AiOutlineInstagram />
+                <FaDiscord />
               </motion.a>
             </div>
           </motion.div>
+
+          {/* RIGHT IMAGE */}
+          <motion.div className="mx-auto w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden">
+            <motion.img
+              key={currentPhotoIndex}
+              src={photos[currentPhotoIndex]}
+              className="w-full h-full object-cover"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            />
+          </motion.div>
+        </div>
+        {/* TECH STACK */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="mt-24 flex flex-col items-center"
+        >
+          <h2 className="text-gray-200 text-3xl sm:text-4xl md:text-5xl mb-8">
+            My Tech Stack
+          </h2>
+
+          <div className="flex flex-wrap justify-center gap-6 text-5xl sm:text-6xl">
+            <DiJavascript1 className="text-yellow-500" />
+            <SiTypescript className="text-blue-500" />
+            <SiNextdotjs className="text-white" />
+            <DiReact className="text-blue-500" />
+            <DiNodejsSmall className="text-green-500" />
+          </div>
         </motion.div>
-
-        <motion.div className="w-[300px] md:w-[300px] h-[300px] md:h-[300px] rounded-full overflow-hidden relative">
-          <motion.img
-            key={currentPhotoIndex}
-            src={photos[currentPhotoIndex]}
-            className="w-full h-full object-cover"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-          />
-        </motion.div>
+        {/* SHINY EFFECT (DESKTOP ONLY) */}
+        <div className="hidden md:block absolute inset-0 pointer-events-none">
+          <ShinyEffect left={0} top={0} size={1400} />
+        </div>{" "}
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, delay: 2 }}
-        className="flex flex-row text-7xl px-12 md:px-0 w-full justify-center items-center py-24"
-      >
-        <p className="text-gray-200 mr-6">My Tech Stack</p>
-        <DiHtml5 className="text-orange-600 mx-2" />
-        <DiCss3 className="text-blue-600 mx-2" />
-        <DiJavascript1 className="text-yellow-500 mx-2" />
-        <DiReact className="text-blue-500 mx-2" />
-        <DiNodejsSmall className="text-green-500 mx-2" />
-      </motion.div>
-
-      <div className="absolute inset-0 hidden md:block">
-        <ShinyEffect left={0} top={0} size={1400} />
-      </div>
-    </div>
+    </section>
   );
 };
 
